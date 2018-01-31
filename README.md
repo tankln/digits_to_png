@@ -1,5 +1,5 @@
 ## What is digits_to_png? ##
-digits_to_png is a script and a package to convert digits to png image, with user specified spacing between digits.
+digits_to_png is a script and a package for converting digits to a png image, with user specified spacing between digits.
 digits_to_png runs with python3 in Linux.
 
 ## Packages Needed ##
