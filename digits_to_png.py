@@ -65,8 +65,6 @@ class mnist_data():
             self.sample_map[item].append(sample)
         self.__data_is_load = 1
 
-    # print(images[0],labels[0])
-
 ##################################################################################
 ##  Class used for handle the png image
 ##################################################################################
@@ -88,8 +86,6 @@ class png_handler():
     def output_to_image(self, data,width,height = 28):
         now_time = time.time()
         milisecond = int((now_time - int(now_time))*1000)
-        # milisecond = lambda:int(round(now_time * 1000)) 
-        # print(milisecond())
         file_name = './result/image-' + time.strftime("%Y%m%d-%H-%M-%S", time.localtime()) + '-' + str(milisecond) + '.png'
         try:
             pngfile = open(file_name, 'wb')      # binary mode is important
@@ -272,7 +268,6 @@ def test_0():
     return digits,spacing
 
 def test_1():
-    # digits = [3,5,0,'a','b','c',1]
     digits = [3,5,0,'a','b','c',1]
     spacing = 'a'
     return digits,spacing
@@ -301,10 +296,12 @@ def test_6():
     digits = [1,4,6,8,1,3,4,0,9,2,5,1,2,3,4,5,6,8]
     spacing = 50
     return digits,spacing
+
 def test_7():
     digits = numpy.random.randint(0,10, MAX_DIGIT_NUM)
     spacing = 50
     return digits,spacing
+
 def test_8():
     digits = numpy.random.randint(0,10, MAX_DIGIT_NUM+1)
     spacing = 50
@@ -350,8 +347,6 @@ def run_tests():
     d_to_mn = digits_to_png()
     for index in range(len(test_map)):
         digits,spacing = test_map[index]
-        # result,errmsg,digits,spacing = p_valid.valid_params(digits, spacing)
-        # if result == 0:
         result,errmsg,filepath = d_to_mn.produce_image(digits,spacing)
         if test_result_map[index] != errmsg:
             print('Test ', index, ' failed!!')
